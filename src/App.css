@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+/* list */
+
+ul li {
+  margin: 5px;
+  font-weight: bold;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* heading */
+
+.heading {
+  text-decoration: underline 3px;
+  margin: 20px;
+}
+.heading:hover {
+  text-decoration-color: red;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+/* button */
+.button {
+  margin: 0 10px;
+}
+
+/* card-body */
+
+.card {
+  background: lightcoral;
+  width: 500px;
+  margin-top: 20px;
+}
