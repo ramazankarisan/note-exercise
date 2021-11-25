@@ -3,6 +3,7 @@ import './App.css';
 import NoteList from './components/NoteList';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Add from './components/Add';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
   const changeHandler = (e) => {
     setText({ title: e.target.value, id: uuidv4() })
   }
+
   const addHandler = (e) => {
     e.preventDefault();
     // to prevent adding one note more than one time
@@ -29,12 +31,7 @@ function App() {
 
   return (
     <div className="App">
-
-      <form onSubmit={addHandler} >
-        <input onChange={changeHandler} type="text" name="text" value={text.title} />
-        <button type="submit">Add to List</button>
-      </form>
-
+      <Add text={text} onSubmit={addHandler} onChange={changeHandler} />
       <ul>
         {list.map(item => {
           return (
@@ -43,11 +40,8 @@ function App() {
                 <button onClick={() => delHandler(item.id)} className="button"><i class="fas fa-trash-alt"></i></button>
                 <NoteList key={item.id} title={item.title} time={item.time} body={item.body} />
               </div>
-
-
             </li>
           )
-
         })}
       </ul>
     </div>
