@@ -10,11 +10,11 @@ const NoteList = (props) => {
   }
 
   return (
-    <>
-      <h2 className="heading" onClick={clickHandler}>{props.title}</h2>
-
+    <div className="flexList">
+      <h2 className="heading" onClick={clickHandler} >{props.title}</h2>
       {showbody && <NoteView title={props.title} time={props.time} body={props.body} />}
-    </>
+
+    </div>
   )
 }
 
