@@ -7,18 +7,21 @@ import { v4 as uuidv4 } from 'uuid';
 function App() {
 
   const [list, setList] = useState(data)
-  const [text, setText] = useState({ title: "", body: "" })
+  const [text, setText] = useState({ title: "", body: "", id: "" })
 
   const changeHandler = (e) => {
     setText({ title: e.target.value, id: uuidv4() })
   }
   const addHandler = (e) => {
     e.preventDefault();
+    // to prevent adding one note more than one time
+    if (list.filter(item => item.id === text.id).length > 0) {
+      return
+    }
     setList(list => [text, ...list])
-    console.log(text);
-    console.log(list);
-
+    console.log(list.filter(item => item.id === text.id));
   }
+
   const delHandler = (note) => {
     setList(list.filter(el => el.id !== note))
 
