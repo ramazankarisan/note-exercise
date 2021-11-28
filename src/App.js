@@ -1,11 +1,12 @@
 import data from './data.json'
 import './App.css';
 import NoteList from './components/NoteList';
-import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Add from './components/Add';
+import { useState } from 'react';
 
 function App() {
+
 
   const [list, setList] = useState(data)
   const [text, setText] = useState({ title: "", body: "", id: "" })
