@@ -82,3 +82,12 @@ ul li {
   color: red;
   margin: 2px;
 }
+/* 
+edit div  */
+
+.editDiv {
+  padding-top: 10px;
+}
+.editDiv button {
+  margin-top: 15px;
+}

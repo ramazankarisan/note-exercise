@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Add(props,) {
+function Add(props) {
   return (
     <form onSubmit={props.onSubmit} >
       <input onChange={props.onChange} type="text" name="text" value={props.text.title} />

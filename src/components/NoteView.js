@@ -8,11 +8,14 @@ const NoteView = (props) => {
   const changeEdit = (e) => {
     setText(e.target.value)
   }
+  const saveButton = () => {
+    setEditShow(!editShow)
+  }
 
   return (
     <>
-      <button onClick={() => setEditShow(!editShow)}>Edit</button>
-      {editShow && <textarea onChange={changeEdit} name="" id="" cols="30" rows="10" value={text}></textarea>}
+      {!editShow && <button onClick={() => setEditShow(!editShow)}>Edit Body</button>}
+      {editShow && <div className="editDiv"><textarea onChange={changeEdit} name="" id="" cols="30" rows="10" value={text}></textarea> <br /> <button onClick={saveButton}>Save</button></div>}
 
       {
         !editShow && <div className="card">
